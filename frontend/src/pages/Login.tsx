@@ -17,7 +17,7 @@ const Login:React.FC = () => {
 
         </div>
 
-        <form className='flex flex-col p-5 w-96 bg-white shadow-md rounded-lg gap-6'>
+        <form className='flex flex-col p-5 w-96 bg-white shadow-md rounded-lg gap-5'>
             <span className='text-2xl font-medium text-center'>Login</span>
 
             <div className='flex flex-col gap-3'>
@@ -29,11 +29,14 @@ const Login:React.FC = () => {
                 <div className='flex flex-col text-sm'>
                     <label htmlFor="password" className=''>Password</label>
                     <input type="password" name='password' id='password' required placeholder='Enter your password' className='px-4 py-2 border border-slate-300 rounded'/>
+                    <div className='flex justify-end pt-1'>
+                        <Link to='/' className='text-teal-700 text-sm hover:underline hover:transition duration-300'>Forgot your password?</Link>
+                    </div>
                 </div>
             </div>
 
             <div className='flex flex-col gap-3'>
-                <Link to='/' className='flex bg-teal-600 px-4 py-2 rounded text-white justify-center items-center gap-2 hover:bg-teal-700 hover:transition duration-300'><LogIn/> Sign In</Link>
+                <button type='submit' className='flex bg-teal-600 px-4 py-2 rounded text-white justify-center items-center gap-2 hover:bg-teal-700 hover:transition duration-300 cursor-pointer'><LogIn/> Sign In</button>
                 <Link to='/register' className='text-center text-teal-600 text-sm hover:text-teal-700 hover:underline hover:transition duration-300'>Don't have an account? Sign Up</Link>
             </div>
 
