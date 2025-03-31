@@ -1,7 +1,8 @@
 import React from 'react'
-import { HeartPulse, LogOut } from 'lucide-react';
+import { HeartPulse } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Nav from './Nav';
+import Btn from './Btn';
 
 const NavBar:React.FC = () => {
   return (
@@ -22,10 +23,7 @@ const NavBar:React.FC = () => {
         <div className='flex items-center text-white gap-5'>
             <span className='font-light'>Welcome, David Antonio</span>
 
-            <button className='flex w-fit h-fit px-5 py-1.5 gap-1.5 items-center rounded-md bg-red-600 hover:bg-red-700 hover:transition duration-300 cursor-pointer'>
-                <LogOut className='w-5 h-5'/>
-                <span>Logout</span>
-            </button>
+            <Btn isLogoutButton={true} text='Logout'/>
         </div>
     </div>
   )
