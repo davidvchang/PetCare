@@ -5,10 +5,11 @@ import Btn from '../components/Btn'
 import { Plus, ChevronRight, ChevronLeft } from 'lucide-react';
 import RowsTable from '../components/RowsTable';
 import BtnPagination from '../components/BtnPagination';
+import AddPet from './AddPet';
 
 const Home:React.FC = () => {
 
-    const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
+    const [addPetModal, setAddPetModal] = useState<boolean>(false);
 
   return (
     <section className='flex flex-col w-full min-h-screen items-center bg-slate-100'>
@@ -18,7 +19,7 @@ const Home:React.FC = () => {
             <div className='flex flex-col gap-8'>
                 <div className='flex w-full items-center justify-between'>
                     <InputSearch/>
-                    <Btn icon={<Plus className='w-5 h-5'/>} text='Add New Pet'/>
+                    <Btn icon={<Plus className='w-5 h-5'/>} text='Add New Pet' onclick={() => setAddPetModal(!addPetModal)}/>
                 </div>
 
                 <table className='shadow-md rounded-md'>
@@ -53,6 +54,10 @@ const Home:React.FC = () => {
                 <span>Total pages: <strong>2</strong></span>
             </div>
         </div>
+
+        {addPetModal === true && (
+            <AddPet onclickCancel={() => setAddPetModal(!addPetModal)}/>
+        )}
         
     </section>
   )
