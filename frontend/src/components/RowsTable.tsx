@@ -32,7 +32,7 @@ const RowsTable:React.FC<PropsRowsTable> = ({name_pet, specie, age, name_owner, 
         </td>
         <td className='px-6 py-4 h-full relative'>
             <div className="flex items-center justify-end h-full">
-                <button className="p-2 rounded-full hover:bg-gray-200" onClick={() => setIsOpenMenu(!isOpenMenu)}><MoreVertical className="w-5 h-5 text-gray-600" /></button>
+                <button className="p-2 rounded-full hover:bg-gray-200 hover:transition duration-300 cursor-pointer" onClick={() => setIsOpenMenu(!isOpenMenu)}><MoreVertical className="w-5 h-5 text-gray-600" /></button>
             </div>
 
             {isOpenMenu && (
