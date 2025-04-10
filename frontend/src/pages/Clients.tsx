@@ -21,7 +21,7 @@ const Clients:React.FC = () => {
             <div className='flex flex-wrap gap-5'>
                 <CardClients/>
             </div>
-
+            
         </div>
       
     </section>

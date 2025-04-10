@@ -5,6 +5,7 @@ import Home from "./pages/Home"
 import Pets from "./pages/Pets"
 import NotFound from "./pages/NotFound"
 import Clients from "./pages/Clients"
+import Profile from "./pages/Profile"
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/admin" element={<Home/>}/>
           <Route path="/admin/pets" element={<Pets/>}/>
           <Route path="/admin/clients" element={<Clients/>}/>
+          <Route path="/admin/profile" element={<Profile/>}/>
 
 
           <Route path="*" element={<NotFound/>}/>
