@@ -8,13 +8,13 @@ const Profile:React.FC = () => {
     <section className='flex flex-col w-full min-h-screen bg-slate-100'>
         <NavBar/>
 
-        <div className='flex flex-col items-center p-10 gap-5'>
-            <div className='flex flex-col lg:w-[40rem]' style={{width: "calc(100vw - 2rem)"}}>
+        <div className='flex flex-col items-center px-5 py-10 lg:p-10 gap-5'>
+            <div className='flex flex-col lg:w-[40rem]'>
                 <span className='text-3xl font-semibold'>Profile Setting</span>
                 <span className='text-slate-500'>Manage your account information and security</span>
             </div>
 
-            <div className='flex flex-col bg-white p-10 lg:w-[40rem] rounded-md shadow gap-5' style={{width: "calc(100vw - 2rem)"}}>
+            <div className='flex flex-col bg-white p-10 w-full lg:w-[40rem] rounded-md shadow gap-5'>
                 <div className='w-full flex justify-center'>
                     <div className='flex w-20 h-20 bg-emerald-100 rounded-full border border-emerald-50 items-center justify-center'>
                         <User className='w-12 h-12 text-emerald-600'/>
