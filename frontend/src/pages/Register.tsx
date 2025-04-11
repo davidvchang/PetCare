@@ -17,7 +17,7 @@ const Register:React.FC = () => {
 
         </div>
 
-        <form className='flex flex-col p-5 w-full md:w-fit bg-white shadow-md rounded-lg gap-5'>
+        <form className='flex flex-col p-5 md:w-fit bg-white shadow-md rounded-lg gap-5' style={{width: "calc(100vw - 2rem)"}}>
             <span className='text-2xl font-medium text-center'>Register</span>
 
             <div className='flex flex-col gap-3'>
