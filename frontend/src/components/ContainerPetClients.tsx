@@ -3,7 +3,7 @@ import { PawPrint, Calendar } from 'lucide-react'
 
 const ContainerPetClients:React.FC = () => {
   return (
-    <div className='flex gap-3 p-5 bg-slate-100 border border-slate-200 rounded-md items-center'>
+    <div className='flex gap-3 p-2 lg:p-5 bg-slate-100 border border-slate-200 rounded-md items-center'>
         <div className='flex bg-emerald-100 w-10 h-10 rounded-full items-center justify-center'>
             <PawPrint className='text-emerald-600'/>
         </div>

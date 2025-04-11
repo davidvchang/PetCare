@@ -8,8 +8,8 @@ const Clients:React.FC = () => {
     <section className='flex flex-col w-full min-h-screen items-center bg-slate-100'>
         <NavBar/>
 
-        <div className='flex flex-col px-8 pt-8 pb-6 w-full gap-5'>
-            <div className='flex w-full items-center justify-between'>
+        <div className='flex flex-col p-4 lg:p-5 lg:px-8 pt-8 pb-6 w-full gap-5'>
+            <div className='flex flex-col gap-5 lg:gap-0 lg:flex-row w-full lg:items-center lg:justify-between'>
                 <div className='flex flex-col gap-1'>
                     <span className='text-3xl font-semibold'>Client Directory</span>
                     <span className=' text-slate-500'>Manage and view all client information</span>
