@@ -8,7 +8,7 @@ interface PropsAddPet {
 const AddPet:React.FC<PropsAddPet> = ({onclickCancel}) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm z-50">
-        <div className="bg-white rounded-lg p-8 w-[28rem] shadow-lg relative">
+        <div className="bg-white rounded-lg p-8 lg:w-[28rem] shadow-lg relative" style={{width: "calc(100vw - 2rem)"}}>
         
 
         <h2 className="text-xl font-semibold mb-4 text-center">Add a New Pet</h2>
