@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 interface PropsLinks {
     to: string,
-    icon: ReactNode
+    icon?: ReactNode
     text: string
 }
 

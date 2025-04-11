@@ -23,7 +23,7 @@ const Home:React.FC = () => {
                 </div>
 
                 <table className='shadow-md rounded-md'>
-                    <thead className='  min-w-full divide-y divide-gray-200'>
+                    <thead className='min-w-full divide-y divide-gray-200'>
                         <tr>
                             <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/4'>PET INFORMATION</th>
                             <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/4'>OWNER DETAILS</th>
