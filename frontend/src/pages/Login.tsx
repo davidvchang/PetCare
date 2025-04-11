@@ -4,7 +4,7 @@ import { LogIn, HeartPulse } from 'lucide-react';
 
 const Login:React.FC = () => {
   return (
-    <section className='flex flex-col w-full min-h-screen items-center justify-center gap-10'>
+    <section className='flex flex-col w-full h-full md:min-h-screen items-center justify-center gap-10'>
         <div className='flex flex-col items-center gap-5'>
             <div className='flex justify-center items-center w-16 h-16 rounded-full bg-teal-600'>
                 <HeartPulse className='text-white w-8 h-8'/>
@@ -17,7 +17,7 @@ const Login:React.FC = () => {
 
         </div>
 
-        <form className='flex flex-col p-5 w-96 bg-white shadow-md rounded-lg gap-5'>
+        <form className='flex flex-col p-5 w-full md:w-96 bg-white shadow-md rounded-lg gap-5'>
             <span className='text-2xl font-medium text-center'>Login</span>
 
             <div className='flex flex-col gap-3'>

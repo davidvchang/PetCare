@@ -11,7 +11,7 @@ import Profile from "./pages/Profile"
 function App() {
 
   return (
-    <main className="w-full min-h-screen">
+    <main className="w-full h-screen md:min-h-screen">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login/>}/>
