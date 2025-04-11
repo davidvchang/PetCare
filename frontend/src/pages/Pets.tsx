@@ -8,8 +8,8 @@ const Pets:React.FC = () => {
     <section className='flex flex-col w-full min-h-screen items-center bg-slate-100'>
         <NavBar/>
 
-        <div className='flex flex-col px-8 pt-8 pb-6 w-full gap-5'>
-            <div className='flex w-full items-center justify-between'>
+        <div className='flex flex-col px-5 lg:px-8 pt-8 pb-6 w-full gap-5'>
+            <div className='flex flex-col lg:flex-row w-full gap-5 lg:gap-0 lg:items-center justify-between'>
                 <span className='text-2xl font-semibold'>All pets</span>
                 <InputSearch/>
             </div>
