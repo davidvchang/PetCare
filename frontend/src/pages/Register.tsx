@@ -17,19 +17,19 @@ const Register:React.FC = () => {
 
         </div>
 
-        <form className='flex flex-col p-5 w-fit bg-white shadow-md rounded-lg gap-5'>
+        <form className='flex flex-col p-5 w-full md:w-fit bg-white shadow-md rounded-lg gap-5'>
             <span className='text-2xl font-medium text-center'>Register</span>
 
             <div className='flex flex-col gap-3'>
                 <div className='flex gap-2'>
                     <div className='flex flex-col text-sm'>
                         <label htmlFor="name" className=''>Name</label>
-                        <input type="text" name='name' id='name' required placeholder='Enter your name' className='px-4 py-2 border border-slate-300 rounded'/>
+                        <input type="text" name='name' id='name' required placeholder='Enter your name' className='w-full px-4 py-2 border border-slate-300 rounded'/>
                     </div>
 
                     <div className='flex flex-col text-sm'>
-                        <label htmlFor="last_name" className=''>Last Name</label>
-                        <input type="text" name='last_name' id='last_name' required placeholder='Enter your last name' className='px-4 py-2 border border-slate-300 rounded'/>
+                        <label htmlFor="last_name" className='w-fit'>Last Name</label>
+                        <input type="text" name='last_name' id='last_name' required placeholder='Enter your last name' className='w-full px-4 py-2 border border-slate-300 rounded'/>
                     </div>
 
                 </div>
