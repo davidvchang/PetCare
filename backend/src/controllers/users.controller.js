@@ -24,6 +24,23 @@ export const postUser = async (req, res) => {
         await pool.query("INSERT INTO users (name, last_name, email, password) VALUES ($1, $2, $3, $4)", [name, last_name, email, hashedPassword])
         res.status(201).json({message: "Registered correctly"})
     } catch (ex) {
-        res.status(500).json({message: "An error has ocurred", error: ex.message})
+        res.status(500).json({message: "An error has ocurred to register", error: ex.message})
+    }
+} 
+
+export const updateUser = async (req, res) => {
+    const {id_user} = req.params
+    const {name, last_name, password} = req.body
+
+    try {
+        const existUser = await pool.query("SELECT COUNT(*) FROM users WHERE id_user = $1", [id_user])
+        if(existUser.rows[0].count === 0) {
+            return res.status(409).json({message: "The user not exist"})
+        }
+
+        await pool.query("UPDATE users SET name = $1, last_name = $2, password = $3", [name, last_name, password])
+        res.status(201).json({message: "The user has been updated"})
+    } catch (ex) {
+        res.status(500).json({message: "An error has ocurred to update", error: ex.message})
     }
 } 
