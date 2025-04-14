@@ -30,7 +30,7 @@ export const updatePet = async (req, res) => {
             return res.status(409).json({message: "The pet not exist"})
         }
 
-        await pool.query("UPDATE pets SET name = $1, age = $2, species = $3", [name, age, species])
+        await pool.query("UPDATE pets SET name = $1, age = $2, species = $3 WHERE id_pet = $4", [name, age, species, id_pet])
         res.status(201).json({message: "The pet has been updated"})
     } catch (ex) {
         res.status(500).json({message: "An error has ocurred to update the pet", error: ex.message})

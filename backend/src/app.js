@@ -3,6 +3,7 @@ import morgan from 'morgan'
 import cors from 'cors'
 import usersRoutes from './routes/users.routes.js'
 import petsRoutes from './routes/pets.routes.js'
+import clientsRoutes from './routes/clients.routes.js'
 
 const app = express()
 
@@ -14,5 +15,6 @@ app.use(express.json())
 
 app.use('/api/users', usersRoutes)
 app.use('/api/pets', petsRoutes)
+app.use('/api/clients', clientsRoutes)
 
 export default app

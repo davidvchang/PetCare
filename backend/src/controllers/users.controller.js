@@ -38,7 +38,7 @@ export const updateUser = async (req, res) => {
             return res.status(409).json({message: "The user not exist"})
         }
 
-        await pool.query("UPDATE users SET name = $1, last_name = $2, password = $3", [name, last_name, password])
+        await pool.query("UPDATE users SET name = $1, last_name = $2, password = $3 WHERE id_user = $4", [name, last_name, password, id_user])
         res.status(201).json({message: "The user has been updated"})
     } catch (ex) {
         res.status(500).json({message: "An error has ocurred to update", error: ex.message})
