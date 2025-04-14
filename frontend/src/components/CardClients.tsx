@@ -1,7 +1,6 @@
 import React from 'react'
 import { Mail, Phone } from 'lucide-react';
 import ContainerPetClients from './ContainerPetClients';
-import { span } from 'framer-motion/client';
 
 interface PropsCardClients {
     name: string,

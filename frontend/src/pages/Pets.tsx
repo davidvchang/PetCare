@@ -1,10 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from '../components/NavBar'
 import InputSearch from '../components/InputSearch'
 import CardPetsInformation from '../components/CardPetsInformation'
 import Navegation from '../components/Navegation'
 
+import {getAllPets} from '../services/petsServices'
+import {getAllClients} from '../services/clientsServices'
+
+interface PropsPetsInformation {
+  name: string,
+  client_id: number,
+  age: number,
+  species: string
+}
+
+interface PropsDataClients {
+  id_client: number
+  name: string,
+  last_name: string,
+  email: string,
+  phone_number: string
+}
+
 const Pets:React.FC = () => {
+
+  const [pets, setPets] = useState<PropsPetsInformation[]>([])
+  const [clients, setClients] = useState<PropsDataClients[]>([])
+
+  const getPets = async () => {
+    const data = await getAllPets()
+    setPets(data)
+  }
+
+  const getClients = async () => {
+    const data = await getAllClients()
+    setClients(data)
+  }
+
+  useEffect(() => {
+    getPets()
+    getClients()
+  }, [])
+  
   return (
     <section className='flex flex-col w-full min-h-screen items-center bg-slate-100'>
         <NavBar/>
@@ -15,11 +52,11 @@ const Pets:React.FC = () => {
                 <InputSearch/>
             </div>
 
-            <div className='flex flex-wrap gap-5 justify-center'>
-                <CardPetsInformation/>
-                <CardPetsInformation/>
-                <CardPetsInformation/>
-                <CardPetsInformation/>
+            <div className='flex flex-wrap gap-5'>
+              {pets.map((pet) => {
+                const owner_name = clients.find((client) => client.id_client === pet.client_id)
+                return <CardPetsInformation name={pet.name} age={pet.age} species={pet.species} client_id={`${owner_name?.name} ${owner_name?.last_name}`}/>
+              })}
                 
             </div>
 

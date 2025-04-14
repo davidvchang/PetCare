@@ -2,7 +2,14 @@ import React from 'react'
 import { PawPrint } from 'lucide-react';
 import DataCardPets from './DataCardPets';
 
-const CardPetsInformation:React.FC = () => {
+interface PropsPetsInformation {
+    name: string,
+    client_id: string,
+    age: number,
+    species: string
+}
+
+const CardPetsInformation:React.FC<PropsPetsInformation> = ({ name, client_id, age, species }) => {
   return (
     <div className='flex flex-col p-5 rounded-md bg-white shadow w-full lg:w-80 gap-5'>
 
@@ -11,14 +18,13 @@ const CardPetsInformation:React.FC = () => {
                 <PawPrint className='text-emerald-600'/>
             </div>
 
-            <span className='text-lg font-semibold'>Rocky</span>
+            <span className='text-lg font-semibold'>{name}</span>
         </div>
 
         <div className='flex flex-col gap-2 text-sm'>
-            <DataCardPets title='Species' text='Dog'/>
-            <DataCardPets title='Years' text='1'/>
-            <DataCardPets title='Owner' text='David Valenzuela'/>
-            <DataCardPets title='Last Visit' text='24/02/2025'/>
+            <DataCardPets title='Species' text={species}/>
+            <DataCardPets title='Years' text={age.toString()}/>
+            <DataCardPets title='Owner' text={client_id}/>
 
             <div className='flex flex-col gap-1 pt-2'>
                 <span className='text-slate-500 font-medium'>Medical History: </span>
