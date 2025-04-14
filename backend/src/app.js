@@ -10,5 +10,6 @@ app.use(morgan("dev"))
 app.use(express.json())
 
 app.use('/api/users', usersRoutes)
+app.use('/api/pets', usersRoutes)
 
 export default app
