@@ -17,7 +17,7 @@ const Login:React.FC = () => {
 
         </div>
 
-        <form className='flex flex-col p-5 md:w-96 bg-white shadow-md rounded-lg gap-5' style={{width: "calc(100vw - 2rem)"}}>
+        <form className='flex flex-col p-5 md:w-96 bg-white shadow-md rounded-lg gap-5'>
             <span className='text-2xl font-medium text-center'>Login</span>
 
             <div className='flex flex-col gap-3'>
