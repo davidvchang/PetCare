@@ -1,12 +1,14 @@
 import React from 'react'
 import { Mail, Phone } from 'lucide-react';
 import ContainerPetClients from './ContainerPetClients';
+import { span } from 'framer-motion/client';
 
 interface PropsCardClients {
     name: string,
     last_name: string,
     email: string,
     phone_number: string,
+    number_pets: number,
     pets: PetsData[]
 }
 
@@ -14,16 +16,16 @@ interface PetsData {
     id_pet: number
     name: string
     client_id: number
-    age: number
+    age: number,
     species: string
 }
 
-const CardClients:React.FC<PropsCardClients> = ({name, last_name, email, phone_number, pets}) => {
+const CardClients:React.FC<PropsCardClients> = ({name, last_name, email, phone_number, pets, number_pets}) => {
   return (
     <div className='bg-white flex flex-col w-full p-5 shadow rounded-md gap-4 lg:gap-2'>
         <div className='flex justify-between items-center'>
             <span className='text-2xl font-semibold'>{name} {last_name}</span>
-            <span className='font-light text-sm w-fit h-fit px-3 py-1 bg-emerald-100 rounded-full text-emerald-700'>1 Pets</span>
+            <span className='font-light text-sm w-fit h-fit px-3 py-1 bg-emerald-100 rounded-full text-emerald-700'>{number_pets} Pets</span>
         </div>
 
         <div className='flex flex-wrap lg:flex-row items-center gap-5 gap-y-2 lg:gap-5'>

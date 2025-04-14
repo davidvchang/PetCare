@@ -58,6 +58,7 @@ const Clients:React.FC<PropsDataClients> = () => {
             <div className='flex flex-wrap gap-5'>
                 {clients.map((client) => {
                     const petsClient = pets.filter((pet) => pet.client_id === client.id_client);
+                    const numberPets = pets.filter((pet) => pet.client_id === client.id_client).length;
                     return (
                         <CardClients 
                             key={client.id_client} 
@@ -65,6 +66,7 @@ const Clients:React.FC<PropsDataClients> = () => {
                             last_name={client.last_name} 
                             email={client.email} 
                             phone_number={client.phone_number}
+                            number_pets={numberPets}
                             pets={petsClient}
                         />
 
