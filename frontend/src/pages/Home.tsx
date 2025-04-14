@@ -6,6 +6,7 @@ import { Plus, ChevronRight, ChevronLeft } from 'lucide-react';
 import RowsTable from '../components/RowsTable';
 import BtnPagination from '../components/BtnPagination';
 import AddPet from './AddPet';
+import Navegation from '../components/Navegation';
 
 const Home:React.FC = () => {
 
@@ -43,16 +44,8 @@ const Home:React.FC = () => {
                 </div>
             </div>
 
-            <div className='flex text-sm font-light gap-5 lg:gap-10 items-center justify-center'>
-                <span>Current page: <strong>1</strong></span>
-
-                <div className='flex gap-3 items-center'>
-                    <BtnPagination icon={<ChevronLeft/>}/>
-                    <span className=' font-medium'>1</span>
-                    <BtnPagination icon={<ChevronRight/>}/>
-                </div>
-
-                <span>Total pages: <strong>2</strong></span>
+            <div className='flex justify-center items-center pt-3'>
+              <Navegation current_page={1} page={1} total_page={2}/>
             </div>
         </div>
 

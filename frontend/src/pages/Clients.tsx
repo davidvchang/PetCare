@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import InputSearch from '../components/InputSearch'
 import CardClients from '../components/CardClients'
+import Navegation from '../components/Navegation'
 
 const Clients:React.FC = () => {
   return (
@@ -20,6 +21,14 @@ const Clients:React.FC = () => {
 
             <div className='flex flex-wrap gap-5'>
                 <CardClients/>
+                <CardClients/>
+                <CardClients/>
+                <CardClients/>
+                <CardClients/>
+            </div>
+
+            <div className='flex justify-center items-center'>
+              <Navegation current_page={1} page={1} total_page={2}/>
             </div>
             
         </div>

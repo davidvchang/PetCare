@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import InputSearch from '../components/InputSearch'
 import CardPetsInformation from '../components/CardPetsInformation'
+import Navegation from '../components/Navegation'
 
 const Pets:React.FC = () => {
   return (
@@ -14,14 +15,16 @@ const Pets:React.FC = () => {
                 <InputSearch/>
             </div>
 
-            <div className='flex flex-wrap gap-5'>
+            <div className='flex flex-wrap gap-5 justify-center'>
                 <CardPetsInformation/>
                 <CardPetsInformation/>
                 <CardPetsInformation/>
                 <CardPetsInformation/>
-                <CardPetsInformation/>
-                <CardPetsInformation/>
-                <CardPetsInformation/>
+                
+            </div>
+
+            <div className='flex justify-center items-center'>
+              <Navegation current_page={1} page={1} total_page={2}/>
             </div>
 
         </div>
