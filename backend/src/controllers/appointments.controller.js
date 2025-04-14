@@ -10,10 +10,10 @@ export const getAppointments = async (req, res) => {
 }
 
 export const postAppointments = async (req, res) => {
-    const {client_id, pet_id, medical_history, last_visit} = req.body
+    const {client_id, pet_id, medical_history} = req.body
 
     try {
-        await pool.query("INSERT INTO appointments (client_id, pet_id, medical_history, last_visit) VALUES ($1, $2, $3, $4)", [client_id, pet_id, medical_history, last_visit])
+        await pool.query("INSERT INTO appointments (client_id, pet_id, medical_history) VALUES ($1, $2, $3)", [client_id, pet_id, medical_history])
         res.status(201).json({message: "Registered correctly"})
     } catch (ex) {
         res.status(500).json({message: "An error has ocurred to register appointments", error: ex.message})
