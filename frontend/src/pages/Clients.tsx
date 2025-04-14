@@ -1,10 +1,46 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from '../components/NavBar'
 import InputSearch from '../components/InputSearch'
 import CardClients from '../components/CardClients'
 import Navegation from '../components/Navegation'
 
-const Clients:React.FC = () => {
+import { getAllClients } from '../services/clientsServices'
+import { getAllPets } from '../services/petsServices'
+
+interface PropsDataClients {
+    id_client: number
+    name: string,
+    last_name: string,
+    email: string,
+    phone_number: string
+}
+
+interface PetsData {
+    name: string
+    client_id: number
+    age: number
+    species: string
+}
+
+const Clients:React.FC<PropsDataClients> = () => {
+
+    const [clients, setClients] = useState<PropsDataClients[]>([])
+    const [pets, setPets] = useState<PetsData[]>([])
+
+    const getClients = async () => {
+        const data = await getAllClients()
+        setClients(data)
+    }
+    const getPets = async () => {
+        const data = await getAllPets()
+        setPets(data)
+    }
+
+    useEffect(() => {
+        getClients()
+        getPets()
+    }, [])
+    
   return (
     <section className='flex flex-col w-full min-h-screen items-center bg-slate-100'>
         <NavBar/>
@@ -20,11 +56,21 @@ const Clients:React.FC = () => {
             </div>
 
             <div className='flex flex-wrap gap-5'>
-                <CardClients/>
-                <CardClients/>
-                <CardClients/>
-                <CardClients/>
-                <CardClients/>
+                {clients.map((client) => {
+                    const petsClient = pets.filter((pet) => pet.client_id === client.id_client);
+                    return (
+                        <CardClients 
+                            key={client.id_client} 
+                            name={client.name} 
+                            last_name={client.last_name} 
+                            email={client.email} 
+                            phone_number={client.phone_number}
+                            pets={petsClient}
+                        />
+
+                    )
+
+                })}
             </div>
 
             <div className='flex justify-center items-center'>
