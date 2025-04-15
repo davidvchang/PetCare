@@ -65,11 +65,18 @@ const Home:React.FC = () => {
                             </tr>
                         </thead>
                         <tbody className='divide-y divide-gray-200 bg-white'>
-                            {appointments.map((a) => {
-                                const pet = pets.find((p) => p.id_pet === a.pet_id);
-                                const client = clients.find((c) => c.id_client === a.client_id);
-                                return <RowsTable key={a.id_appointment} name_pet={pet?.name || 'Unknown'} specie={pet?.species || 'Unknown'} age={pet?.age || 0} name_owner={client?.name || 'Unknown'} email={client?.email || 'Unknown'} phone={client?.phone_number || 'Unknown'} medical_history={a.medical_history}/>
-                            })}
+                            {appointments.length === 0 ? (
+                                <tr>
+                                    <td colSpan={4} className='text-center py-4 text-gray-600'>There are no appointments</td>
+                                </tr>
+                            ) : (
+                                appointments.map((a) => {
+                                    const pet = pets.find((p) => p.id_pet === a.pet_id);
+                                    const client = clients.find((c) => c.id_client === a.client_id);
+                                    return <RowsTable key={a.id_appointment} name_pet={pet?.name || 'Unknown'} specie={pet?.species || 'Unknown'} age={pet?.age || 0} name_owner={client?.name || 'Unknown'} email={client?.email || 'Unknown'} phone={client?.phone_number || 'Unknown'} medical_history={a.medical_history}/>
+                                })
+                                )
+                            }
                             
                         </tbody>
                     </table>
