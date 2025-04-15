@@ -52,7 +52,7 @@ const Home:React.FC = () => {
             <div className='flex flex-col gap-8'>
                 <div className='flex flex-col gap-5 md:gap-0 md:flex-row w-full md:items-center justify-between'>
                     <InputSearch/>
-                    <Btn icon={<Plus className='w-5 h-5'/>} text='Add New Pet' onclick={() => setAddPetModal(!addPetModal)}/>
+                    <Btn icon={<Plus className='w-5 h-5'/>} text='Add Appointment' onclick={() => setAddPetModal(!addPetModal)}/>
                 </div>
                 <div className='w-full overflow-x-auto'>
                     <table className='shadow-md rounded-md w-full'>
