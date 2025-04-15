@@ -2,24 +2,14 @@ import React from 'react'
 import { Mail, Phone } from 'lucide-react';
 import ContainerPetClients from './ContainerPetClients';
 
-interface PropsCardClients {
-    name: string,
-    last_name: string,
-    email: string,
-    phone_number: string,
+import type {Clients, Pets} from '../types/interfaces'
+
+interface ExtendedClients extends Clients {
     number_pets: number,
-    pets: PetsData[]
+    pets: Pets[]
 }
 
-interface PetsData {
-    id_pet: number
-    name: string
-    client_id: number
-    age: number,
-    species: string
-}
-
-const CardClients:React.FC<PropsCardClients> = ({name, last_name, email, phone_number, pets, number_pets}) => {
+const CardClients:React.FC<ExtendedClients> = ({name, last_name, email, phone_number, pets, number_pets}) => {
   return (
     <div className='bg-white flex flex-col w-full p-5 shadow rounded-md gap-4 lg:gap-2'>
         <div className='flex justify-between items-center'>

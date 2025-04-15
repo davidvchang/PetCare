@@ -2,14 +2,9 @@ import React from 'react'
 import { PawPrint } from 'lucide-react';
 import DataCardPets from './DataCardPets';
 
-interface PropsPetsInformation {
-    name: string,
-    client_id: string,
-    age: number,
-    species: string
-}
+import type {Pets} from '../types/interfaces'
 
-const CardPetsInformation:React.FC<PropsPetsInformation> = ({ name, client_id, age, species }) => {
+const CardPetsInformation:React.FC<Pets> = ({ name, client_id, age, species }) => {
   return (
     <div className='flex flex-col p-5 rounded-md bg-white shadow w-full lg:w-80 gap-5'>
 

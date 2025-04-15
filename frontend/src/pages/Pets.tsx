@@ -7,25 +7,12 @@ import Navegation from '../components/Navegation'
 import {getAllPets} from '../services/petsServices'
 import {getAllClients} from '../services/clientsServices'
 
-interface PropsPetsInformation {
-  name: string,
-  client_id: number,
-  age: number,
-  species: string
-}
-
-interface PropsDataClients {
-  id_client: number
-  name: string,
-  last_name: string,
-  email: string,
-  phone_number: string
-}
+import type {Pets, Clients} from '../types/interfaces'
 
 const Pets:React.FC = () => {
 
-  const [pets, setPets] = useState<PropsPetsInformation[]>([])
-  const [clients, setClients] = useState<PropsDataClients[]>([])
+  const [pets, setPets] = useState<Pets[]>([])
+  const [clients, setClients] = useState<Clients[]>([])
 
   const getPets = async () => {
     const data = await getAllPets()

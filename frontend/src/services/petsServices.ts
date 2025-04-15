@@ -1,18 +1,12 @@
 import api from './api'
-
-interface PetsData {
-    name: string
-    client_id: number
-    age: number
-    species: string
-}
+import {Pets} from '../types/interfaces'
 
 export const getAllPets = async () => {
     const res = await api.get("/pets")
     return res.data
 }
 
-export const registerClient = async (data: PetsData) => {
+export const registerClient = async (data: Pets) => {
     const res = await api.post("/pets", data)
     return res.data
 }
